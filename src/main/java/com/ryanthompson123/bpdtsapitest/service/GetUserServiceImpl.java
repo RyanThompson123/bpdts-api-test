@@ -12,8 +12,9 @@ import java.util.stream.Collectors;
 @Slf4j
 @Service
 public class GetUserServiceImpl implements GetUserService {
-    public static final double LONDON_LAT = 51.5074;
-    public static final double LONDON_LON = -0.1278;
+    // Asumption that LONDON_LATITUDE and LONDON_LONGITUDE are correct from google search
+    public static final double LONDON_LATITUDE = 51.5074;
+    public static final double LONDON_LONGITUDE = -0.1277;
     public static final double CLOSE_LONDON_DISTANCE = 60;
 
     private GetUsers getUsersClient;
@@ -38,8 +39,8 @@ public class GetUserServiceImpl implements GetUserService {
         return usersNearLondon;
     }
 
-    private boolean isNearLondon(double lat, double lon){
-        double distance = DistanceCalc.distanceInMiles(LONDON_LAT, LONDON_LON, lat, lon);
+    private boolean isNearLondon(double latitude, double longitude){
+        double distance = DistanceCalc.distanceInMiles(LONDON_LATITUDE, LONDON_LONGITUDE, latitude, longitude);
         return distance < CLOSE_LONDON_DISTANCE;
     }
 }

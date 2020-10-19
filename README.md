@@ -23,11 +23,12 @@ To run the application:
 
 5. The application will now be running on port 8080
 
+
+Alternatively if you do not wish to run the containerized version use "mvn spring-boot:run" to run locally. 
+
 # Endpoints
 
-http://localhost:8080/get-users - will return a full list of users
-
-http://localhost:8080/get-users/london - will return a list of user London and within 60 miles of London
+http://localhost:8080/london - will return a list of users in London and within 60 miles of London
 
 # Testing
 

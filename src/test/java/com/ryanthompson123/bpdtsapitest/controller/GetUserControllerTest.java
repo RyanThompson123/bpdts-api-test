@@ -29,27 +29,10 @@ class UserControllerTest {
     }
 
     @Test
-    void getLondonUsers_returnsUserInAndNearLondon() {
+    void getLondonUsers_shouldReturnUserInAndNearLondon() {
         List<User> usersInLondon = UserMockData.getUsers(20);
         List<User> usersNearLondon = UserMockData.getUsersWithFourNearLondon();
         int expectedSize = usersInLondon.size() + usersNearLondon.size();
-
-        when(getUserService.getUsersInLondon()).thenReturn(usersInLondon);
-        when(getUserService.getUsersNearLondon()).thenReturn(usersNearLondon);
-
-        ResponseEntity<List<User>> response = getUserController.getLondonUsers();
-
-        verify(getUserService, times(1)).getUsersInLondon();
-        verify(getUserService, times(1)).getUsersNearLondon();
-
-        assertEquals(expectedSize, response.getBody().size());
-    }
-
-    @Test
-    void getLondonUsers_returnsUserInAndNearLondon_removingDuplicates() {
-        List<User> usersInLondon = UserMockData.getUsersWithFourNearLondon();
-        List<User> usersNearLondon = UserMockData.getUsersWithFourNearLondon();
-        int expectedSize = usersNearLondon.size();
 
         when(getUserService.getUsersInLondon()).thenReturn(usersInLondon);
         when(getUserService.getUsersNearLondon()).thenReturn(usersNearLondon);

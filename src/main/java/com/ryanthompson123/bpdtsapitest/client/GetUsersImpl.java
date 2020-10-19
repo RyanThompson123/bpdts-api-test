@@ -1,9 +1,8 @@
 package com.ryanthompson123.bpdtsapitest.client;
 
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -14,9 +13,8 @@ import java.util.List;
 
 @Slf4j
 @Component
-@ConfigurationProperties(value = "codetest.users", ignoreUnknownFields = false)
 public class GetUsersImpl implements GetUsers {
-    @Setter
+    @Value ("${bpdts.api}")
     private String apihost;
 
     @Autowired
@@ -26,6 +24,7 @@ public class GetUsersImpl implements GetUsers {
     private RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
 
     @Override
     public List<User> allUsers() {
