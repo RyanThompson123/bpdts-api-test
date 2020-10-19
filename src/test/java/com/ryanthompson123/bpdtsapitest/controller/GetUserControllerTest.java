@@ -39,9 +39,6 @@ class UserControllerTest {
 
         ResponseEntity<List<User>> response = getUserController.getLondonUsers();
 
-        verify(getUserService, times(1)).getUsersInLondon();
-        verify(getUserService, times(1)).getUsersNearLondon();
-
         assertEquals(expectedSize, response.getBody().size());
     }
 }

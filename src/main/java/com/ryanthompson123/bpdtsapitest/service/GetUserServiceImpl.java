@@ -26,6 +26,7 @@ public class GetUserServiceImpl implements GetUserService {
     @Override
     public List<User> getUsersInLondon() {
         List<User> users = getUsersClient.usersByCity("London");
+
         return users;
     }
 
@@ -41,6 +42,7 @@ public class GetUserServiceImpl implements GetUserService {
 
     private boolean isNearLondon(double latitude, double longitude){
         double distance = DistanceCalc.distanceInMiles(LONDON_LATITUDE, LONDON_LONGITUDE, latitude, longitude);
+        
         return distance < CLOSE_LONDON_DISTANCE;
     }
 }

@@ -9,6 +9,7 @@ public class DistanceCalc {
             double distance = Math.sin(Math.toRadians(latitude1)) * Math.sin(Math.toRadians(latitude2)) + Math.cos(Math.toRadians(latitude1)) * Math.cos(Math.toRadians(latitude2)) * Math.cos(Math.toRadians(theta));
             distance = Math.acos(distance);
             distance = Math.toDegrees(distance);
+            
             return distance * 60 * 1.1515;
         }
     }
