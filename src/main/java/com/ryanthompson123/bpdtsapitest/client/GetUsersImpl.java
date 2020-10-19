@@ -25,7 +25,6 @@ public class GetUsersImpl implements GetUsers {
         return new RestTemplate();
     }
 
-
     @Override
     public List<User> allUsers() {
         ResponseEntity<User[]> response = getUsersFromAPI(apihost + "users");
