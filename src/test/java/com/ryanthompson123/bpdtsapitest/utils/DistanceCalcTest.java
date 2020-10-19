@@ -9,6 +9,7 @@ class DistanceCalcTest {
     void distanceInMiles_shouldBeZeroForSameLocation() {
         // London Coordinates: 51.5074, -0.1277
         double distance = DistanceCalc.distanceInMiles(51.5074, -0.1277, 51.5074, -0.1277);
+        
         assertEquals(0,distance);
     }
 
@@ -18,6 +19,7 @@ class DistanceCalcTest {
         // Newcastle Coordinates: 54.9783, -1.6178
         double expectedDistanceInMiles = 247.57674431106798; 
         double distance = DistanceCalc.distanceInMiles(51.5074, -0.1277, 54.9783, -1.6178);
+
         assertEquals(expectedDistanceInMiles,distance,2);
     }
 }

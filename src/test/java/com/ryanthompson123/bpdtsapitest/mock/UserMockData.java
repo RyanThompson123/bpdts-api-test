@@ -59,7 +59,6 @@ public class UserMockData {
                     .longitude(-0.3338)
                     .build());
 
-        String string = "Test4";
 		users.add(User.builder()
                     .id(2)
                     .firstName("Test4")

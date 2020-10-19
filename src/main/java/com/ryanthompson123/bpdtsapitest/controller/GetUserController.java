@@ -14,7 +14,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Slf4j
-@RequestMapping("/get-users")
+@RequestMapping("/")
 @RestController
 public class GetUserController {
     private GetUserService getUserService;
@@ -23,7 +23,7 @@ public class GetUserController {
         this.getUserService = getUserService;
     }
 
-    @GetMapping("/get-users/london")
+    @GetMapping("/london")
     public ResponseEntity<List<User>> getLondonUsers(){
         List<User> usersInLondon = getUserService.getUsersInLondon();
         List<User> usersNearLondon = getUserService.getUsersNearLondon();
